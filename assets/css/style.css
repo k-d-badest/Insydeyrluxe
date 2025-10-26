@@ -1,0 +1,105 @@
+body {
+  font-family: 'Cormorant Garamond', serif;
+  background-color: #fff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#heroVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FFD700;
+  text-align: center;
+  perspective: 1000px;
+}
+
+.hero-overlay h1, .hero-overlay p {
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.btn {
+  background-color: #FFD700;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #e6c200;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-card {
+  border: 1px solid #eee;
+  padding: 15px;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 1024px) {
+  .hero-overlay h1 {
+    font-size: 3rem;
+  }
+  .hero-overlay p {
+    font-size: 1.2rem;
+  }
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-overlay {
+    padding: 20px;
+  }
+  .hero-overlay h1 {
+    font-size: 2.5rem;
+  }
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-overlay h1 {
+    font-size: 2rem;
+  }
+  .hero-overlay p {
+    font-size: 0.9rem;
+  }
+  .btn {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+}
